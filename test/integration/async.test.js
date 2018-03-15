@@ -26,20 +26,20 @@ describe('async.test.js', () => {
   });
 
   it('runs interleaved tests - services', function () {
-    this.timeout(5000)
+    this.timeout(5000);
 
     app = createApp(false);
     return asyncTest(app, 10)
       .then(() => assert(true))
-      .catch(err => assert(false));
+      .catch(() => assert(false));
   });
 
   it('runs interleaved tests - SQL', function () {
-    this.timeout(5000)
+    this.timeout(5000);
 
     app = createApp(true);
     return asyncTest(app, 10)
       .then(() => assert(true))
-      .catch(err => assert(false));
+      .catch(() => assert(false));
   });
 });
